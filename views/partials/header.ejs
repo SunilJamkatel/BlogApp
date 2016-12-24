@@ -12,10 +12,10 @@
         <a class="item active">
           <i class="write icon"></i>Blog App
         </a>
-        <a href='/' class="item">
+        <a href='/' class="item <% if(pageName === 'index') { %>active<% } %>">
           Home
         </a>
-        <a href='/blogs/new' class="item" >
+        <a href='/blogs/new' class="item <% if(pageName === 'new') { %>active<% } %>" >
           New Post
         </a>
       </div>

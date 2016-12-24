@@ -32,13 +32,13 @@ app.get('/blogs',function(req,res){
     if(err){
       console.log("ERROR!!!");
     } else {
-      res.render('index',{blogs:blogs});
+      res.render('index', {blogs: blogs, pageName: 'index'});
     }
   })
 });
 
 app.get('/blogs/new',function(req,res){
-  res.render('new');
+  res.render('new', {pageName: 'new'});
 });
 
 app.get('/blogs/:id',function(req,res){
@@ -46,7 +46,7 @@ app.get('/blogs/:id',function(req,res){
     if(err){
       res.redirect('/blogs');
     }else{
-      res.render('show',{blog:foundBlog});
+      res.render('show', {blog: foundBlog, pageName: 'show'});
     }
   })
 })
@@ -56,7 +56,7 @@ app.get('/blogs/:id/edit', function(req,res){
     if(err){
       res.redirect('/Blogs');
     } else {
-      res.render('edit',{blog:foundBlog});
+      res.render('edit',{blog: foundBlog, pageName: 'edit'});
     }
   })
 });
